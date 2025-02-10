@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+// html, body{
+//     overflow-x: hidden;
+// }
+
+@mixin RubikXS{
+    font-family: Rubik;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+}
+@mixin RubikS{
+    font-family: Rubik;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+header{
+    width: 1440px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 4px 8px 0px rgb(0, 0, 0, 0.1);
+    nav{
+        width: 1208px;
+        height: 72px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left{
+            width: 723px;
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .catalog_search{
+                width: 531px;
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .catalog{
+                    width: 124px;
+                    height: 24px;
+                    padding: 8px;
+                    background-color: #70C05B;
+                    border-radius: 4px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    p{
+                        @include RubikS;
+                        color: white;
+                        width: 92px;
+                        text-align: center;
+                    }
+                }
+                .search_bar{
+                    width: 375px;
+                    height: 40px;
+                    border-radius: 4px;
+                    border: 1px solid #70C05B;
+                    box-sizing: border-box;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 8px;
+                    input{
+                        width: 317px;
+                        height: 24px;
+                        border: none;
+                        box-sizing: border-box;
+                        padding-left: 8px;
+                        @include RubikS;
+                    }
+                    ::placeholder {
+                        color: #8F8F8F;
+                        opacity: 1;
+                    }
+                    button{
+                        border: none;
+                        background: none;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .right{
+            width: 445px;
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .links{
+                width: 204px;
+                height: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                p{
+                    @include RubikXS;
+                }
+                .favorite{
+                    width: 65px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: center;
+                    flex-direction: column;
+                }
+                .orders{
+                    width: 42px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: center;
+                    flex-direction: column;
+                }
+                .cart{
+                    width: 49px;
+                    height: 50px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: center;
+                    flex-direction: column;
+                }
+            }
+            .account{
+                width: 217px;
+                height: 72px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-sizing: border-box;
+                padding: 8px;
+                .con{
+                    width: 201px;
+                    height: 56px;
+                    box-sizing: border-box;
+                    padding: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    div:nth-of-type(1){
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 135px;
+                        cursor: pointer;
+                    }
+                    img.pfp{
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        border-radius: 40px;
+                    }
+                    p{
+                        width: 85px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        @include RubikS;
+                    }
+                    img.arrow{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
