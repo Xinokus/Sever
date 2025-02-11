@@ -1,0 +1,63 @@
+@import '../fonts.scss';
+
+footer{
+    width: 1440px;
+    height: 126px;
+    background-image: url(./img/bg.png);
+    background-color: #F9F4E2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    .con{
+        width: 1208px;
+        height: 44px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 24px;
+        .left{
+            width: 740px;
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .links{
+                width: 636px;
+                height: 18px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                a{
+                    @include RubikXS;
+                    text-decoration: none;
+                    color: #414141;
+                }
+            }
+        }
+        .right{
+            width: 336px;
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            .socials{
+                width: 144px;
+                height: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+            }
+            .contacts{
+                width: 152px;
+                height: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                @include RubikS;
+                color: #414141;
+            }
+        }
+    }
+}

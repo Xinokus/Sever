@@ -2,6 +2,7 @@ import classes from './mainPage.module.scss'
 import { useState } from 'react'
 
 import Header from '../header/header'
+import Footer from '../footer/footer.jsx'
 import img from './img/img.png'
 import right_arrow from './img/right_arrow.png'
 
@@ -241,7 +242,7 @@ export default function MainPage(){
                 </section>
                 <section className={classes.sect_three}>
                     <div className={classes.title}>
-                        <p>Покупали раньше</p>
+                        <p>Наши магазины</p>
                     </div>
                     <div className={classes.maps}>
                         <div className={classes.choice}>
@@ -319,6 +320,7 @@ export default function MainPage(){
                     </div>
                 </section>
             </main>
+            <Footer/>
         </>
     )
 }
