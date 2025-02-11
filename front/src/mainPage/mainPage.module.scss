@@ -1,5 +1,17 @@
 @import '../header/header.module.scss';
 
+@mixin RubikHeaderXS{
+    font-size: 18px;
+    font-family: Rubik;
+    font-weight: 700;
+    line-height: 27px;
+}
+@mixin RubikHeaderS{
+    font-size: 24px;
+    font-family: Rubik;
+    font-weight: 700;
+    line-height: 36px;
+}
 @mixin RubikHeaderM{
     font-size: 36px;
     font-family: Rubik;
@@ -11,6 +23,12 @@
     font-family: Rubik;
     font-weight: 700;
     line-height: 72px;
+}
+@mixin RubikBoldM{
+    font-size: 18px;
+    font-family: Rubik;
+    font-weight: 700;
+    line-height: 27px;
 }
 
 .sect_one{
@@ -54,6 +72,7 @@ main{
         justify-content: space-between;
         align-items: start;
         flex-direction: column;
+        margin-bottom: 120px;
         .top{
             width: 1208px;
             height: 54px;
@@ -109,9 +128,353 @@ main{
                 background-color: white;
                 border-radius: 4px;
                 box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.1);
+                border-radius: 4px;
                 .image{
                     width: 272px;
                     height: 160px;
+                    display: flex;
+                    justify-content: space-between;
+                    box-sizing: border-box;
+                    background-position: center;
+                    position: relative;
+                    right: 8px;
+                    .discount{
+                        height: 152px;
+                        display: flex;
+                        justify-content: start;
+                        align-items: end;
+                        margin-left: 10px;
+                        p{
+                            width: 56px;
+                            height: 32px;
+                            background-color: #FF6633;
+                            border-radius: 4px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            @include RubikS;
+                            color: white;
+                        }
+                    }
+                    .favorite{
+                        width: 32px;
+                        height: 32px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgb(243, 242, 241, 0.5);
+                        margin-top: 8px;
+                        margin-right: 8px;
+                        border-radius: 4px;
+                        button{
+                            background: none;
+                            border: none;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+                }
+                .price{
+                    width: 256px;
+                    height: 45px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .with_card{
+                        p:nth-of-type(1){
+                            @include RubikBoldM;
+                        }
+                        p:nth-of-type(2){
+                            @include RubikXS;
+                            color: #BFBFBF;
+                        }
+                    }
+                    .regular{
+                        p:nth-of-type(1){
+                            @include RubikS;
+                        }
+                        p:nth-of-type(2){
+                            @include RubikXS;
+                            color: #BFBFBF;
+                        }
+                    }
+                }
+                .name{
+                    @include RubikS;
+                }
+                .stars{
+                    width: 96px;
+                    height: 16px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .cart button{
+                    width: 256px;
+                    height: 40px;
+                    border: 1px solid #70C05B;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                    background: none;
+                    color: #70C05B;
+                    @include RubikS;
+                    cursor: pointer;
+                }
+                .cart button:hover{
+                    color: white;
+                    background-color: #FF6633;
+                    border: none;
+                }
+            }
+        }
+    }
+    .sect_three{
+        width: 1208px;
+        height: 504px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        margin-bottom: 120px;
+        .title{
+            @include RubikHeaderM;
+            color:#414141;
+        }
+        .maps{
+            width: 1208px;
+            height: 410px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            .choice{
+                width: 439px;
+                height: 32px;
+                display: flex;
+                justify-content: space-between;
+                button{
+                    background-color: #F3F2F1;
+                    border: none;
+                    border-radius: 4px;
+                    @include RubikXS;
+                    cursor: pointer;
+                }
+                button:nth-of-type(1){
+                    width: 97px;
+                }
+                button:nth-of-type(2){
+                    width: 86px;
+                }
+                button:nth-of-type(3){
+                    width: 104px;
+                }
+                button:nth-of-type(4){
+                    width: 80px;
+                }
+                button.active{
+                    background-color: #70C05B;
+                    color: white;
+                }
+            }
+            .map{
+                width: 1208px;
+                height: 354px;
+                background-color: #BFBFBF;
+                border-radius: 4px;
+            }
+        }
+    }
+    .sect_four{
+        width: 1208px;
+        height: 294px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        margin-bottom: 120px;
+        .title{
+            @include RubikHeaderM;
+            color:#414141;
+        }
+        .special{
+            width: 1208px;
+            height: 200px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            .special_one{
+                width: 584px;
+                height: 200px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-direction: column;
+                box-sizing: border-box;
+                background-image: url(./img/loyaltyCard.png);
+                background-repeat: no-repeat;
+                background-position: 100%;
+                background-color: #FCD5BA;
+                border-radius: 4px;
+                box-shadow: 0px 8px 16px 0px rgb(202, 147, 96, 0.5);
+                .con{
+                    width: 258px;
+                    height: 126px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: column;
+                    margin-top: 30px;
+                    margin-left: 40px;
+                    p:nth-of-type(1){
+                        @include RubikHeaderS;
+                    }
+                    p:nth-of-type(2){
+                        @include RubikS;
+                    }
+                }
+            }
+            .special_two{
+                width: 584px;
+                height: 200px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-direction: column;
+                box-sizing: border-box;
+                background-image: url(./img/plusesAndCur.png);
+                background-repeat: no-repeat;
+                background-position: 100% 100%;
+                background-color: #E5FFDE;
+                border-radius: 4px;
+                .con{
+                    width: 258px;
+                    height: 126px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: column;
+                    margin-top: 30px;
+                    margin-left: 40px;
+                    p:nth-of-type(1){
+                        @include RubikHeaderS;
+                    }
+                    p:nth-of-type(2){
+                        @include RubikS;
+                    }
+                }
+            }
+        }
+    }
+    .sect_five{
+        width: 1208px;
+        height: 514px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        .top{
+            width: 1208px;
+            height: 54px;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            .title{
+                height: 54px;
+                @include RubikHeaderM;
+                color: #414141;
+            }
+            .link{
+                height: 40px;
+                width: 168px;
+                padding: 8px;
+                box-sizing: border-box;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                a{
+                    display: flex;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                p{
+                    width: 120px;
+                    height: 24px;
+                    @include RubikS;
+                    text-align: center;
+                    color: #606060;
+                }
+                a:hover p{
+                    text-decoration: underline;
+                }
+            }
+        }
+        .bot{
+            width: 1208px;
+            height: 420px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            border-radius: 4px;
+            .card{
+                width: 376px;
+                height: 420px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-direction: column;
+                background-color: #FFFFFF;
+                border-radius: 4px;
+                .image{
+                    img{
+                        border-top-left-radius: 4px;
+                        border-top-right-radius: 4px;
+                    }
+                    
+                }
+                .con{
+                    width: 356px;
+                    height: 238px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: column;
+                    >div{
+                        width: 356px;
+                        height: 185px;
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: column;
+                    }
+                    .date{
+                        @include RubikXS;
+                        color: #8F8F8F;
+                    }
+                    .title{
+                        @include RubikHeaderXS;
+                    }
+                    .desc{
+                        @include RubikS;
+                    }
+                    .more{
+                        width: 150px;
+                            height: 40px;
+                        button{
+                            width: 150px;
+                            height: 40px;
+                            background-color: #E5FFDE;
+                            @include RubikS;
+                            border: none;
+                            color: #70C05B;
+                            cursor: pointer;
+                            border-radius: 4px;
+                        }
+                        button:hover{
+                            background-color: #70C05B;
+                            color: white;
+                        }
+                    }
                 }
             }
         }
