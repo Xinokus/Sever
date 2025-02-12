@@ -14,14 +14,14 @@ export default function Footer(){
                 <div className={classes.con}>
                     <div className={classes.left}>
                         <div className={classes.logo}>
-                            <img src={logo} alt="" />
+                            <a href="/"><img src={logo} alt="" /></a>
                         </div>
                         <div className={classes.links}>
-                            <a href="">О компании</a>
-                            <a href="">Контакты</a>
-                            <a href="">Вакансии</a>
-                            <a href="">Статьи</a>
-                            <a href="">Политика обработки персональных данных</a>
+                            <a href="/about">О компании</a>
+                            <a href="/contacts">Контакты</a>
+                            <a href="/jobs">Вакансии</a>
+                            <a href="/articles">Статьи</a>
+                            <a href="/policy">Политика обработки персональных данных</a>
                         </div>
                     </div>
                     <div className={classes.right}>

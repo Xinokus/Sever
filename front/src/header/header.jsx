@@ -1,4 +1,5 @@
 import classes from './header.module.scss'
+import { useState } from 'react'
 
 import logo from './img/logo.png'
 import menu from './img/menu.png'
@@ -8,8 +9,50 @@ import orders from './img/orders.png'
 import cart from './img/cart.png'
 import blankPFP from './img/profile_picture.png'
 import downArrow from './img/down_arrow.png'
+import Close from './img/close.png'
+import arrowLeft from './img/arrow_left.png'
 
 export default function Header(){
+    const [isUserLogged, setIsUserLogged] = useState(false)
+    const [userName, setUserName] = useState('')
+    const [catalogState, setCatalogState] = useState(false)
+    const [loginPopUpState, setLoginPopUpState] = useState(false)
+
+    function OpenCatalog(){
+        setCatalogState(true)
+        let catalog = document.getElementById("catalogWindow")
+        catalog.style.visibility = 'visible'
+        catalog.style.opacity = 1
+        catalog.style.top = '72px'
+    }
+    function CloseCatalog(){
+        setCatalogState(false)
+        let catalog = document.getElementById("catalogWindow")
+        catalog.style.visibility = 'hidden'
+        catalog.style.opacity = 0
+        catalog.style.top = '0px'
+    }
+    
+    function OpenLoginPopUp(){
+        setLoginPopUpState(true)
+        let popup = document.getElementById('loginPopUp')
+        popup.style.visibility = 'visible'
+        popup.style.opacity = 1
+    }
+    function CloseLoginPopUp(){
+        setLoginPopUpState(false)
+        let popup = document.getElementById('loginPopUp')
+        popup.style.visibility = 'hidden'
+        popup.style.opacity = 0
+    }
+
+    function SetBorderToInput(input){
+        document.getElementById(input).style.border = '1px solid #70C05B'
+    }
+    function RemoveBorderFromInput(input){
+        document.getElementById(input).style.border = '1px solid #BFBFBF'
+    }
+
     return(
         <>
             <header>
@@ -19,7 +62,7 @@ export default function Header(){
                             <a href="/"><img src={logo} alt="" /></a>
                         </div>
                         <div className={classes.catalog_search}>
-                            <div className={classes.catalog}>
+                            <div className={classes.catalog} onClick={catalogState ? CloseCatalog : OpenCatalog}>
                                 <img src={menu} alt="" />
                                 <p>Каталог</p>
                             </div>
@@ -46,9 +89,9 @@ export default function Header(){
                         </div>
                         <div className={classes.account}>
                             <div className={classes.con}>
-                                <div>
+                                <div onClick={loginPopUpState ? CloseLoginPopUp : OpenLoginPopUp}>
                                     <img src={blankPFP} alt="" className={classes.pfp}/>
-                                    <p>Войти</p>
+                                    <p>{isUserLogged ? userName : 'Войти'}</p>
                                 </div>
                                 <div>
                                     <img src={downArrow} alt="" className={classes.arrow}/>
@@ -58,6 +101,67 @@ export default function Header(){
                     </div>
                 </nav>
             </header>
+            <div className={classes.catalog_menu} id='catalogWindow'>
+                <div className={classes.con}>
+                    <div className={classes.links}>
+                        <a href="/catalog/milk-cheese-eggs">Молоко, сыр, яйцо</a>
+                        <a href="/catalog/bread">Хлеб</a>
+                        <a href="/catalog/vegetables">Фрукты и овощи</a>
+                        <a href="/catalog/frozen-food">Замороженные продукты</a>
+                    </div>
+                    <div className={classes.links}>
+                        <a href="/catalog/drinks">Напитки</a>
+                        <a href="/catalog/candy">Кондитерские изделия</a>
+                        <a href="/catalog/tea-coffee">Чай, кофе</a>
+                    </div>
+                    <div className={classes.links}>
+                        <a href="/catalog/grocery">Бакалея</a>
+                        <a href="/catalog/healthy-food">Здоровое питание</a>
+                        <a href="/catalog/for-pets">Зоотовары</a>
+                    </div>
+                    <div className={classes.links}>
+                        <a href="/catalog/non-edible">Непродовольственные товары</a>
+                        <a href="/catalog/for-babies">Детское питание</a>
+                        <a href="/catalog/meat">Мясо, птица, колбаса</a>
+                    </div>
+                </div>
+            </div>
+            <div className={classes.login_popup} id='loginPopUp'>
+                <div className={classes.window}>
+                    <div className={classes.close_window}>
+                        <button type="button" onClick={loginPopUpState ? CloseLoginPopUp : OpenLoginPopUp}><img src={Close} alt="" /></button>
+                    </div>
+                    <div className={classes.main}>
+                        <div className={classes.title}>
+                            <p>Вход</p>
+                        </div>
+                        <form onSubmit={e => e.preventDefault()} className={classes.inputs}>
+                            <div className={classes.phone}>
+                                <label htmlFor=""><p>Телефон</p></label>
+                                <input type="tel" name="phone" id="phone" required 
+                                onBlur={() => RemoveBorderFromInput('phone')} 
+                                onFocus={() => SetBorderToInput('phone')}
+                                />
+                            </div>
+                            <div className={classes.submit}>
+                                <button type="submit"><p>Вход</p></button>
+                            </div>
+                        </form>
+                        <div className={classes.other}>
+                            <div className={classes.register}>
+                                <button type="button">Регистрация</button>
+                            </div>
+                            <div className={classes.return} style={{display: 'none'}}>
+                                <img src={arrowLeft} alt="" />
+                                <p>Вернуться</p>
+                            </div>
+                            <div className={classes.forgor}>
+                                <p>Забыли пароль?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

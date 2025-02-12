@@ -26,7 +26,7 @@ export default function MainPage(){
                     </div>
                 </div>
             </section>
-            <main>
+            <main className={classes.main}>
                 <section className={classes.sect_two}>
                     <div className={classes.top}>
                         <div className={classes.title}>

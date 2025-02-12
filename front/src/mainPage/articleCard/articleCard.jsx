@@ -12,10 +12,8 @@ export default function ArticleCard({image, date, title, desc}){
                         <div className={classes.date}>
                             <p>{date}</p>
                         </div>
-                        <div className={classes.title}>
+                        <div className={classes.text}>
                             <p>{title}</p>
-                        </div>
-                        <div className={classes.desc}>
                             <p>{desc}</p>
                         </div>
                     </div>

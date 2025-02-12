@@ -1,7 +1,7 @@
-import classes from '../mainPage.module.scss'
+import classes from './productCard.module.scss'
 
-import favorite from '../img/favorite.png'
-import addedFavorite from '../img/addedFavorite.png'
+import noHeart from '../img/heart.png'
+import Heart from '../img/heartActive.png'
 import { useState } from 'react'
 
 export default function ProductCard({id, onSale, regularPrice, cardPrice, img, name, star1, star2, star3, star4, star5, discount}){
@@ -14,8 +14,8 @@ export default function ProductCard({id, onSale, regularPrice, cardPrice, img, n
                     <div style={onSale ? {} : {visibility: 'hidden'}} className={classes.discount}>
                         <p>{discount}</p>
                     </div>
-                    <div className={isFavorite ? `${classes.favorite} ${classes.active}` : `${classes.favorite}`}>
-                        <button type="button" onClick={isFavorite ? ()=>addFavorite(false) : ()=>addFavorite(true)}><img src={isFavorite ? addedFavorite : favorite} alt="" /></button>
+                    <div className={isFavorite ? `${classes.favorite} ${classes.active}` : `${classes.favorite}`} onClick={isFavorite ? ()=>addFavorite(false) : ()=>addFavorite(true)}>
+                        <button type="button" ><img src={isFavorite ? Heart : noHeart} style={isFavorite ? {opacity: 1} : {opacity: 0.5}} alt="" className={isFavorite ? `${classes.active}` : null}/></button>
                     </div>
                 </div>
                 <div className={classes.price}>

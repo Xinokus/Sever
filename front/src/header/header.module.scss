@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import '../fonts.scss';
 *{
     margin: 0;
     padding: 0;
@@ -7,26 +8,15 @@
 //     overflow-x: hidden;
 // }
 
-@mixin RubikXS{
-    font-family: Rubik;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-}
-@mixin RubikS{
-    font-family: Rubik;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-}
-
 header{
     width: 1440px;
     height: 72px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     box-shadow: 2px 4px 8px 0px rgb(0, 0, 0, 0.1);
+    z-index: 5;
     nav{
         width: 1208px;
         height: 72px;
@@ -169,10 +159,213 @@ header{
                         height: 40px;
                         display: flex;
                         align-items: center;
+                        justify-content: center;
                         @include RubikS;
+                    }
+                    p:hover{
+                        text-decoration: underline;
                     }
                     img.arrow{
                         cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+.catalog_menu{
+    width: 1440px;
+    height: 248px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+    z-index: 3;
+    box-shadow: 0px 8px 16px 0px rgb(0, 0, 0, 0.15);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+    .con{
+        width: 1208px;
+        height: 168px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        .links{
+            width: 272px;
+            height: 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            a{
+                @include RubikBoldS;
+                color: #414141;
+                text-decoration: none;
+            }
+            a:hover{
+                color: #FF6633;
+            }
+        }
+        .links:nth-of-type(1){
+            height: 168px;
+        }
+    }
+}
+.login_popup{
+    width: 1440px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s all ease;
+    background-color: rgb(65, 65, 65, 0.3);
+    .window{
+        width: 420px;
+        height: 431px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 4px;
+        .close_window{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            button{
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+        }
+        .main{
+            width: 420px;
+            height: 359px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 40px;
+            box-sizing: border-box;
+            .title{
+                @include RubikHeaderS;
+                color: #414141;
+            }
+            .inputs{
+                width: 260px;
+                height: 187px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                .phone{
+                    width: 260px;
+                    height: 87px;
+                    display: flex;
+                    flex-direction: column;
+                    label{
+                        @include RubikM;
+                        color: #8F8F8F;
+                    }
+                    input{
+                        width: 260px;
+                        height: 60px;
+                        padding: 12px;
+                        padding-left: 16px;
+                        border-radius: 4px;
+                        border: 1px solid #BFBFBF;
+                        @include RubikL;
+                        box-sizing: border-box;
+                        box-sizing: border-box;
+                    }
+                    &.active{
+                        background-color: #70C05B;
+                    }
+                }
+                .submit{
+                    width: 260px;
+                    height: 68px;
+                    button{
+                        width: 260px;
+                        height: 68px;
+                        background-color: #FCD5BA;
+                        border: none;
+                        color: #FF6633;
+                        @include RubikL;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #FF6633;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .other{
+                width: 260px;
+                height: 32px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .register{
+                    width: 121px;
+                    height: 32px;
+                    button{
+                        width: 121px;
+                        height: 32px;
+                        border: 1px solid #70C05B;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        background: none;
+                        color: #70C05B;
+                        @include RubikXS;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #70C05B;
+                            color: white;
+                        }
+                    }
+                }
+                .return{
+                    width: 111px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    @include RubikXS;
+                    color: #606060;
+                    padding: 4px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    p:hover{
+                        text-decoration: underline;
+                    }
+                }
+                .forgor{
+                    width: 123px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    @include RubikXS;
+                    color: #414141;
+                    p:hover{
+                        text-decoration: underline;
                     }
                 }
             }
