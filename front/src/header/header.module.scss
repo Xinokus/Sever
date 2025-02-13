@@ -105,6 +105,22 @@ header{
                     align-items: center;
                     text-align: center;
                     flex-direction: column;
+                    cursor: pointer;
+                    text-decoration: none;
+                    overflow: hidden;
+                        p{
+                            color: #414141;
+                        }
+                        &:hover p{
+                            color: #FF6633;
+                        }
+                        p.active{
+                            color: #FF6633;
+                        }   
+                        &:hover img{
+                            filter: drop-shadow(70px 0px 0px #FF6633);
+                            transform: translateX(-70px);
+                        }
                 }
                 .orders{
                     width: 42px;
@@ -114,6 +130,22 @@ header{
                     align-items: center;
                     text-align: center;
                     flex-direction: column;
+                    cursor: pointer;
+                    text-decoration: none;
+                    overflow: hidden;
+                        p{
+                            color: #414141;
+                        }
+                        &:hover p{
+                            color: #FF6633;
+                        }
+                        p.active{
+                            color: #FF6633;
+                        }
+                        &:hover img{
+                            filter: drop-shadow(70px 0px 0px #FF6633);
+                            transform: translateX(-70px);
+                        }
                 }
                 .cart{
                     width: 49px;
@@ -123,6 +155,22 @@ header{
                     align-items: center;
                     text-align: center;
                     flex-direction: column;
+                    cursor: pointer;
+                    text-decoration: none;
+                    overflow: hidden;
+                        p{
+                            color: #414141;
+                        }
+                        p.active{
+                            color: #FF6633;
+                        }
+                        &:hover p{
+                            color: #FF6633;
+                        }
+                        &:hover img{
+                            filter: drop-shadow(70px 0px 0px #FF6633);
+                            transform: translateX(-70px);
+                        }
                 }
             }
             .account{

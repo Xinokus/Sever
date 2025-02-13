@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import MainPage from './mainPage/mainPage'
 import CategoryPage from './categoryPage/categoryPage'
+import FavoritePage from './favoritePage/favoritePage'
 
 import MilkCheeseEggs from './categoryPage/categories/milk-cheese-eggs/milk-cheese-eggs'
 
@@ -16,7 +17,7 @@ createRoot(document.getElementById('root')).render(
         <Route path={'/about'} element={<CategoryPage/>}></Route>
         <Route path={'/cart'} element={<CategoryPage/>}></Route>
         <Route path={'/contacts'} element={<CategoryPage/>}></Route>
-        <Route path={'/favorite'} element={<CategoryPage/>}></Route>
+        <Route path={'/favorite'} element={<FavoritePage/>}></Route>
         <Route path={'/item'} element={<CategoryPage/>}></Route>
         <Route path={'/jobs'} element={<CategoryPage/>}></Route>
         <Route path={'/orders'} element={<CategoryPage/>}></Route>

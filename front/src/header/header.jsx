@@ -1,12 +1,15 @@
 import classes from './header.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import logo from './img/logo.png'
 import menu from './img/menu.png'
 import search from './img/search.png'
 import favorite from './img/favorite.png'
+import favorite_active from './img/favorite_active.png'
 import orders from './img/orders.png'
+import orders_active from './img/orders_active.png'
 import cart from './img/cart.png'
+import cart_active from './img/cart_active.png'
 import blankPFP from './img/profile_picture.png'
 import downArrow from './img/down_arrow.png'
 import Close from './img/close.png'
@@ -17,6 +20,20 @@ export default function Header(){
     const [userName, setUserName] = useState('')
     const [catalogState, setCatalogState] = useState(false)
     const [loginPopUpState, setLoginPopUpState] = useState(false)
+
+    const [onWhatPage, setOnWhatPage] = useState('')
+
+    useEffect(()=>{
+        if(document.URL.includes("favorite")){
+            setOnWhatPage('favorite')
+        }
+        else if(document.URL.includes("orders")){
+            setOnWhatPage('orders')
+        }
+        else if(document.URL.includes("cart")){
+            setOnWhatPage('cart')
+        }
+    })
 
     function OpenCatalog(){
         setCatalogState(true)
@@ -74,18 +91,18 @@ export default function Header(){
                     </div>
                     <div className={classes.right}>
                         <div className={classes.links}>
-                            <div className={classes.favorite}>
-                                <img src={favorite} alt="" />
-                                <p>Избранное</p>
-                            </div>
-                            <div className={classes.orders}>
-                                <img src={orders} alt="" />
-                                <p>Заказы</p>
-                            </div>
-                            <div className={classes.cart}>
-                                <img src={cart} alt="" />
-                                <p>Корзина</p>
-                            </div>
+                            <a href='/favorite' className={classes.favorite}>
+                                <img src={onWhatPage == 'favorite' ? favorite_active : favorite} alt="" />
+                                <p className={onWhatPage == 'favorite' ? classes.active : null}>Избранное</p>
+                            </a>
+                            <a href='/orders' className={classes.orders}>
+                                <img src={onWhatPage == 'orders' ? orders_active : orders} alt="" />
+                                <p className={onWhatPage == 'orders' ? classes.active : null}>Заказы</p>
+                            </a>
+                            <a href='/cart' className={classes.cart}>
+                                <img src={onWhatPage == 'cart' ? cart_active : cart} alt="" />
+                                <p className={onWhatPage == 'cart' ? classes.active : null}>Корзина</p>
+                            </a>
                         </div>
                         <div className={classes.account}>
                             <div className={classes.con}>
