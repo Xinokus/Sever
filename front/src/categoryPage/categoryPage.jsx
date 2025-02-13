@@ -51,7 +51,7 @@ export default function CategoryPage(){
                                     </a>
                                 </div>
                                 <div className={classes.category_regular} style={{backgroundImage: "url(" + vegies + ")"}}>
-                                    <a href='/catalog/vegetables' className={classes.category_con}>
+                                    <a href='/catalog/fruits-and-vegetables' className={classes.category_con}>
                                         <p>Фрукты и овощи</p>
                                     </a>
                                 </div>

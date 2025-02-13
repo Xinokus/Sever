@@ -123,7 +123,7 @@ export default function Header(){
                     <div className={classes.links}>
                         <a href="/catalog/milk-cheese-eggs">Молоко, сыр, яйцо</a>
                         <a href="/catalog/bread">Хлеб</a>
-                        <a href="/catalog/vegetables">Фрукты и овощи</a>
+                        <a href="/catalog/fruits-and-vegetables">Фрукты и овощи</a>
                         <a href="/catalog/frozen-food">Замороженные продукты</a>
                     </div>
                     <div className={classes.links}>

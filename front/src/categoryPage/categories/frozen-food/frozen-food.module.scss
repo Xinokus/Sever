@@ -1,0 +1,407 @@
+@import '../../../fonts.scss';
+
+.main{
+    width: 100%;
+    height: 1326px;
+    background-color: #FBF8EC;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding-top: 24px;
+    .section{
+        width: 1208px;
+        height: 1222px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        .top{
+            width: 353px;
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a{
+                color: #414141;
+                @include RubikXS;
+                text-decoration: none;
+            }
+            a:nth-of-type(3){
+                opacity: 0.5;
+            }
+        }
+        .bot{
+            width: 1208px;
+            height: 1174px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            .title{
+                @include RubikHeaderL;
+                color: #414141;
+            }
+            .general{
+                width: 1208px;
+                height: 1042px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-direction: column;
+                .options{
+                    width: 502px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    button{
+                        height: 32px;
+                        border-radius: 4px;
+                        background-color: #F3F2F1;
+                        border: none;
+                        @include RubikXS;
+                        color: #606060;
+                        cursor: pointer;
+                    }
+                    button:nth-of-type(1){
+                        width: 220px;
+                    }
+                    button:nth-of-type(2){
+                        width: 147px;
+                    }
+                    button:nth-of-type(3){
+                        width: 87px;
+                    }
+                    button:hover{
+                        background-color: #FF6633;
+                        color: white;
+                    }
+                    button.active{
+                        background-color: #FF6633;
+                        color: white;
+                    }
+                }
+                .items_and_filters{
+                    width: 1208px;
+                    height: 970px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    .filters{
+                        width: 272px;
+                        height: 542px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        flex-direction: column;
+                        .filter{
+                            width: 272px;
+                            height: 44px;
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            padding: 10px;
+                            box-sizing: border-box;
+                            background-color: #F3F2F1;
+                            border-radius: 4px;
+                            @include RubikBoldS;
+                            color: #414141;
+                        }
+                        .price_range{
+                            width: 272px;
+                            height: 122px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: start;
+                            flex-direction: column;
+                            .text_and_clear{
+                                width: 272px;
+                                height: 32px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                p{
+                                    @include RubikS;
+                                    color: #414141;
+                                }
+                                button{
+                                    width: 85px;
+                                    height: 32px;
+                                    border: none;
+                                    background-color: #F3F2F1;
+                                    @include RubikXS;
+                                    color: #606060;
+                                    border-radius: 4px;
+                                    &:hover{
+                                        background-color: #FF6633;
+                                        color: white;
+                                    }
+                                }
+                            }
+                            .pick_range{
+                                width: 272px;
+                                height: 40px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                input{
+                                    width: 124px;
+                                    height: 40px;
+                                    border: 1px solid #BFBFBF;
+                                    box-sizing: border-box;
+                                    padding: 8px;
+                                    padding-left: 16px;
+                                    border-radius: 4px;
+                                }
+                            }
+                            .range_slider{
+                                width: 272px;
+                                height: 24px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .slider{
+                                    height: 4px;
+                                    width: 272px;
+                                    background-color: #F3F2F1;
+                                    position: absolute;
+                                    border-radius: 4px;
+                                    .progress{
+                                        height: 4px;
+                                        position: absolute;
+                                        border-radius: 5px;
+                                        left: 25%;
+                                        right: 25%;
+                                        background-color: #70C05B;
+                                    }
+                                }
+                                .inputs{
+                                    position: absolute;
+                                    transform: translate(-136px, -2px);
+                                    input{
+                                        position: absolute;
+                                        width: 272px;
+                                        height: 4px;
+                                        background: none;
+                                        pointer-events: none;
+                                        -webkit-appearance: none;
+                                        -moz-appearance: none;
+                                        appearance: none;
+                                        &::-webkit-slider-thumb, &::-moz-range-thumb{
+                                            height: 24px;
+                                            width: 24px;
+                                            border: 1px white solid;
+                                            box-sizing: border-box;
+                                            border-radius: 50%;
+                                            background: #70C05B;
+                                            pointer-events: auto;
+                                            -webkit-appearance: none;
+                                            box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .texts{
+                            width: 272px;
+                            height: 152px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: start;
+                            flex-direction: column;
+                            div{
+                                width: 272px;
+                                height: 44px;
+                                display: flex;
+                                align-items: center;
+                                @include RubikS;
+                            }
+                        }
+                        .in_stock{
+                            width: 137px;
+                            height: 24px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: start;
+                            button{
+                                width: 46px;
+                                height: 24px;
+                                border-radius: 49px;
+                                border: none;
+                                background-color: #BFBFBF;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+                                transition: 0.3s all ease;
+                                div{
+                                    width: 20px;
+                                    height: 20px;
+                                    border: 0.5px solid rgb(0, 0, 0, 0.04);
+                                    border-radius: 20px;
+                                    box-sizing: border-box;
+                                    background-color: white;
+                                    position: relative;
+                                    transition: 0.3s all ease;
+                                    transform: translateX(-11px);
+                                    box-shadow: 0px 2px 6px 0px rgb(0, 0, 0, 0.15), 0px 1px 1px 0px rgb(0, 0, 0, 0.08);
+                                }
+                            }
+                            p{
+                                color: #414141;
+                                @include RubikS;
+                            }
+                        }
+                        .submit{
+                            button{
+                                width: 272px;
+                                height: 40px;
+                                color: #FF6633;
+                                background-color: #FCD5BA;
+                                border: none;
+                                @include RubikS;
+                                border-radius: 4px;
+                            }
+                            button:hover{
+                                color: white;
+                                background-color: #FF6633;
+                            }
+                        }
+                    }
+                    .items{
+                        width: 896px;
+                        height: 970px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        flex-direction: column;
+                        .filter_sect{
+                            width: 521px;
+                            height: 32px;
+                            display: flex;
+                            align-items: start;
+                            button{
+                                height: 32px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding-left: 8px;
+                                padding-right: 8px;
+                                box-sizing: border-box;
+                                border-radius: 4px;
+                                border: none;
+                                cursor: pointer;
+                                overflow: hidden;
+                                background-color: #F3F2F1;
+                                margin-right: 24px;
+                                &.active{
+                                    background-color: #70C05B;
+                                    color: white;
+                                }
+                                &.inactive{
+                                    display: none;
+                                }
+                                &:nth-of-type(1){
+                                    width: 118px;
+                                    p{
+                                        width: 70px;
+                                        text-align: center;
+                                    }
+                                    img{
+                                        cursor: pointer;
+                                    }
+                                }
+                                &:nth-of-type(2){
+                                    width: 184px;
+                                    p{
+                                        width: 136px;
+                                        text-align: center;
+                                    }
+                                    img{
+                                        cursor: pointer;
+                                    }
+                                }
+                                &:nth-of-type(3){
+                                    width: 171px;
+                                    p{
+                                        width: 123px;
+                                        text-align: center;
+                                    }
+                                    img{
+                                        cursor: pointer;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        .main_sect{
+                            width: 896px;
+                            height: 738px;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: start;
+                            flex-direction: column;
+                            .line{
+                                width: 896px;
+                                height: 349px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: start;
+                            }
+                        }
+                        .show_more{
+                            width: 896px;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            button{
+                                width: 157px;
+                                height: 40px;
+                                border: none;
+                                background-color: #F3F2F1;
+                                color: #606060;
+                                cursor: pointer;
+                                border-radius: 4px;
+                                @include RubikS;
+                                &:hover{
+                                    background-color: #FF6633;
+                                    color: white;
+                                }
+                            }
+                        }
+                        .pagination{
+                            width: 896px;
+                            height: 40px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            >div{
+                                width: 656px;
+                                height: 40px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: start;
+                                div{
+                                    width: 40px;
+                                    height: 40px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    @include RubikS;
+                                    color: #606060;
+                                    &.active{
+                                        color: #FF6633;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

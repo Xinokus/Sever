@@ -28,21 +28,31 @@ export default function FavoritePage(){
     useEffect(()=>{
         onload = ClearPriceRange
         document.title = 'Избранное'
-        document.getElementById('minPrice').value = 2500
-        document.getElementById('maxPrice').value = 7500
-
-        document.getElementById("priceSliderMin").value = 2500;
-        document.getElementById("priceSliderMax").value = 7500;
     })
 
     function SliderChange(){
-        // Slider needs fixing; 
-
         document.getElementById('minPrice').value = document.getElementById("priceSliderMin").value;
         document.getElementById('maxPrice').value = document.getElementById("priceSliderMax").value;
 
-        document.getElementById("progress_bar").style.left = document.getElementById("priceSliderMin").value / 100 + 'px'
-        document.getElementById("progress_bar").style.right = document.getElementById("priceSliderMax").value / 100 + 'px'
+        document.getElementById("progress_bar").style.left = document.getElementById("priceSliderMin").value / 100 + '%'
+        document.getElementById("progress_bar").style.right = 100 - document.getElementById("priceSliderMax").value / 100 + '%'
+
+        let priceGap = 500;
+        let minValue = parseInt(document.getElementById("priceSliderMin").value)
+        let maxValue = parseInt(document.getElementById("priceSliderMax").value)
+
+        if(maxValue - minValue < priceGap){
+            document.getElementById("priceSliderMin").value = maxValue - priceGap;
+            document.getElementById("priceSliderMax").value = minValue + priceGap;
+        }
+        if(maxValue < 500){
+            document.getElementById("priceSliderMax").value = maxValue + 500;
+            document.getElementById('maxPrice').value = document.getElementById("priceSliderMax").value;
+        }
+        if(minValue > 9499){
+            document.getElementById("priceSliderMin").value = minValue - 500;
+            document.getElementById('minPrice').value = document.getElementById("priceSliderMin").value;
+        }
     }
 
     function ClearFilters(){
@@ -53,6 +63,12 @@ export default function FavoritePage(){
     function ClearPriceRange(){
         document.getElementById('minPrice').value = 2500
         document.getElementById('maxPrice').value = 7500
+
+        document.getElementById("priceSliderMin").value = 2500;
+        document.getElementById("priceSliderMax").value = 7500;
+
+        document.getElementById("progress_bar").style.left = document.getElementById("priceSliderMin").value / 100 + '%'
+        document.getElementById("progress_bar").style.right = 100 - document.getElementById("priceSliderMax").value / 100 + '%'
     }
 
     return(
@@ -94,7 +110,6 @@ export default function FavoritePage(){
                                                 <input className={classes.price_slider} type="range" name="priceSlider" id="priceSliderMin" max={9999} min={0} step={1} onChange={SliderChange}/>
                                                 <input className={classes.price_slider} type="range" name="priceSlider" id="priceSliderMax" max={9999} min={0} step={1} onChange={SliderChange}/>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div className={classes.texts}>

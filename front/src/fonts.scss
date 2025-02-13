@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @mixin RubikXS{
     font-family: Rubik;
     font-size: 12px;
@@ -52,6 +53,12 @@
     font-weight: 700;
     line-height: 96px;
 }
+@mixin RobotoBoldXS{
+    font-size: 12px;
+    font-family: Roboto;
+    font-weight: 700;
+    line-height: 18px;
+}
 @mixin RubikBoldS{
     font-size: 16px;
     font-family: Rubik;
@@ -63,4 +70,10 @@
     font-family: Rubik;
     font-weight: 700;
     line-height: 27px;
+}
+@mixin RubikBoldL{
+    font-size: 24px;
+    font-family: Rubik;
+    font-weight: 700;
+    line-height: 32px;
 }
