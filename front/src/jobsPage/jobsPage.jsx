@@ -1,4 +1,4 @@
-import classes_jobs from './jobsPage.module.scss';
+import classes from './jobsPage.module.scss';
 import right_arrowG from './img/chevronRight.svg'
 import { Link } from 'react-router-dom';
 
@@ -12,16 +12,16 @@ export default function JobsPage() {
     return (
         <>
         <Header/>
-            <main className={classes_jobs.main_jobs_Page}>
-                <section className={classes_jobs.sect_title}>
-                    <div className={classes_jobs.cont_return_link}>
-                        <Link className={classes_jobs.return_link} to="/">Главная</Link>
+            <main className={classes.main_jobs_Page}>
+                <section className={classes.sect_title}>
+                    <div className={classes.cont_return_link}>
+                        <Link className={classes.return_link} to="/">Главная</Link>
                         <img src={right_arrowG} alt="" />
                         <p>Вакансии</p>
                     </div>
                     <h1>Вакансии</h1>
                 </section>
-                <section className={classes_jobs.sect_cards}>
+                <section className={classes.sect_cards}>
                     {jobsData.map((job) => (
                         <JobsCards
                             key={job.id}
