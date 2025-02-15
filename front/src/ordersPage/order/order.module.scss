@@ -1,0 +1,117 @@
+@import '../../fonts.scss';
+
+.order{
+    width: 1208px;
+    height: 509px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    .info{
+        width: 1208px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        .left{
+            height: 36px;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            p{
+                margin-right: 24px;
+            }
+            p:nth-of-type(1), p:nth-of-type(2){
+                @include RubikBoldL;
+                color: #414141;
+            }
+            p:nth-of-type(3){
+                height: 32px;
+                padding-left: 8px;
+                padding-right: 8px;
+                background-color: #F3F2F1;
+                color: #414141;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include RubikS;
+                border-radius: 4px;
+            }
+        }
+        .right{
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            >p{
+                @include RubikL;
+                color: #414141;
+            }
+            button{
+                width: 200px;
+                height: 40px;
+                margin-left: 24px;
+                background-color: #70C05B;
+                border: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px;
+                box-sizing: border-box;
+                border-radius: 4px;
+                color: white;
+                @include RubikS;
+                cursor: pointer;
+                p{
+                    width: 152px;
+                    color: white;
+                    @include RubikS;
+                }
+            }
+        } 
+    }
+    .items{
+        height: 349px;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        margin-top: 40px;
+    }
+    .show_more{
+        width: 1208px;
+        height: 40px;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button:hover{
+            background-color: #FF6633;
+            p{
+                color: white;
+            }
+            img{
+                filter: drop-shadow(0px 70px 0px white);
+                transform: translate(0px, -70px);
+            }
+        }
+        button{
+            overflow: hidden;
+            width: 200px;
+            height: 40px;
+            background-color: #F3F2F1;
+            border: none;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            box-sizing: border-box;
+            cursor: pointer;
+            p{
+                width: 152px;
+                @include RubikS;
+                color: #414141;
+            }
+        }
+    }
+}

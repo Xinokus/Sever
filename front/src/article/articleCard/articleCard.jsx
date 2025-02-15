@@ -1,4 +1,4 @@
-import classes from '../mainPage.module.scss'
+import classes from './articleCard.module.scss'
 
 export default function ArticleCard({image, date, title, desc}){
     return(

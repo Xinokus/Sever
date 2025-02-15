@@ -8,6 +8,8 @@ import FavoritePage from './favoritePage/favoritePage'
 import CartPage from './cartPage/cartPage'
 import JobsPage from './jobsPage/jobsPage'
 import AboutPage from './aboutPage/aboutPage'
+import ContactsPage from './contactsPage/contactsPage'
+import OrdersPage from './ordersPage/ordersPage'
 
 import MilkCheeseEggs from './categoryPage/categories/milk-cheese-eggs/milk-cheese-eggs'
 import Bread from './categoryPage/categories/bread/bread'
@@ -31,11 +33,11 @@ createRoot(document.getElementById('root')).render(
         <Route path={'/catalog'} element={<CategoryPage/>}></Route>
         <Route path={'/about'} element={<AboutPage/>}></Route>
         <Route path={'/cart'} element={<CartPage/>}></Route>
-        <Route path={'/contacts'} element={<CategoryPage/>}></Route>
+        <Route path={'/contacts'} element={<ContactsPage/>}></Route>
         <Route path={'/favorite'} element={<FavoritePage/>}></Route>
         <Route path={'/item'} element={<CategoryPage/>}></Route>
         <Route path={'/jobs'} element={<JobsPage/>}></Route>
-        <Route path={'/orders'} element={<CategoryPage/>}></Route>
+        <Route path={'/orders'} element={<OrdersPage/>}></Route>
         <Route path={'/orders_table'} element={<CategoryPage/>}></Route>
         <Route path={'/search'} element={<CategoryPage/>}></Route>
 

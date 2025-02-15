@@ -3,8 +3,8 @@ import classes from './favoritePage.module.scss'
 import Header from '../header/header'
 import Footer from '../footer/footer'
 
-import ProductCard from '../mainPage/productCard/productCard'
-import { ProductInfo } from '../mainPage/productInfo'
+import ProductCard from '../product/productCard/productCard'
+import { ProductInfo } from '../product/productInfo'
 
 import arrowRight from './img/arrow_right.png'
 import minus from './img/minus.png'

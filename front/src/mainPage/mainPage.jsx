@@ -6,10 +6,10 @@ import Footer from '../footer/footer.jsx'
 import img from './img/img.png'
 import right_arrow from './img/right_arrow.png'
 
-import ProductCard from './productCard/productCard'
-import { ProductInfo } from './productInfo.js'
-import ArticleCard from './articleCard/articleCard.jsx'
-import { ArticleInfo } from './articleInfo.js'
+import ProductCard from '../product/productCard/productCard'
+import { ProductInfo } from '../product/productInfo.js'
+import ArticleCard from '../article/articleCard/articleCard.jsx'
+import { ArticleInfo } from '../article/articleInfo.js'
 
 export default function MainPage(){
     const [activeMap, setActiveMap] = useState(1)

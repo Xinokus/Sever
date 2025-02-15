@@ -1,0 +1,54 @@
+@import '../fonts.scss';
+
+.main{
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 80px;
+    background-color: #FBF8EC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .section{
+        width: 1208px;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+        .top{
+            width: 159px;
+            height: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            a{
+                color: #414141;
+                @include RubikXS;
+                text-decoration: none;
+            }
+            a:nth-of-type(2){
+                opacity: 0.5;
+            }
+        }
+        .bot{
+            width: 1208px;
+            display: flex;
+            justify-content: start;
+            align-items: start;
+            flex-direction: column;
+            .title{
+                @include RubikHeaderL;
+                color: #414141;
+                margin-bottom: 60px;
+            }
+            .order_container{
+                width: 1208px;
+                height: 509px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-direction: column;
+            }
+        }
+    }
+}
