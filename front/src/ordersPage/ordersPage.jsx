@@ -12,6 +12,9 @@ export default function OrdersPage(){
     useEffect(()=>{
         document.title = 'Заказы'
     })
+    
+    
+
     return(
         <>
             <Header/>
@@ -33,6 +36,20 @@ export default function OrdersPage(){
                                 state={'В процессе'}
                                 price={'3 006.83'}
                                 button={'Когда доставить'}
+                                showFullOrder={false}
+                                isThereMore={true}
+                            />
+                        </div>
+                        <div className={classes.order_container}>
+                            <Order
+                                date={'01.04.2021'}
+                                time={'11:00-14:00'}
+                                state={'Возврат'}
+                                price={'3 006.83'}
+                                button={'Заказать'}
+                                showFullOrder={false}
+                                isThereMore={false}
+                                
                             />
                         </div>
                     </div>
