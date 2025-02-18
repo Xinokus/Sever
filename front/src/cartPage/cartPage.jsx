@@ -1,4 +1,5 @@
 import classes from './cartPage.module.scss'
+import { useEffect, useState } from 'react'
 
 import Header from '../header/header'
 import Footer from '../footer/footer'
@@ -9,23 +10,30 @@ import smile from './img/smile.png'
 
 import CartItem from './cartItem/cartItem'
 import item from './img/item.png'
-import { useEffect, useState } from 'react'
 
-import { totalForItems } from './cartItem/cartItem'
 
 export default function CartPage(){
-    const [selectAll, setSelectAll] = useState(0)
+    const [getTotal, setTotal] = useState(258.1)
+    const [selectAll, setSelectAll] = useState(false)
+    const [discount, setDiscount] = useState(8.01)
+    let [itemAmount, setItemAmount] = useState(0)
 
+    const [switchState, setSwitchState] = useState(true)
+    
     useEffect(()=>{
         document.title = 'Корзина'
+        CheckTotal()
+        let items = document.getElementsByName('cart_item')
+        setItemAmount(items.length)
     })
 
     function SelectAll(){
-        setSelectAll(2)
-        let array = document.querySelectorAll('cartItem')
-        array.forEach(element => {
-            element.itemSelected = true
-        })
+        setSelectAll(true)
+    }
+
+    function CheckTotal(){
+        // setTotal(parseFloat(document.getElementById('total_price').innerHTML))
+        // console.log(parseFloat(getTotal))
     }
 
     return(
@@ -42,7 +50,7 @@ export default function CartPage(){
                         <div className={classes.title}>
                             <p>Корзина</p>
                             <div>
-                                <p>3</p>
+                                <p>{itemAmount}</p>
                             </div>
                         </div>
                         <div className={classes.general}>
@@ -63,7 +71,7 @@ export default function CartPage(){
                                     cardPrice={'44.50'}
                                     regularPrice={'50.50'}
                                     name={'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»'}
-                                    discount={10}
+                                    discount={0}
                                     amount={2}
                                     />
                                     <CartItem
@@ -81,8 +89,8 @@ export default function CartPage(){
                                     cardPrice={'44.50'}
                                     regularPrice={'50.50'}
                                     name={'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»'}
-                                    discount={10}
-                                    amount={2}
+                                    discount={0}
+                                    amount={3}
                                     />
                                     <CartItem
                                     onSale={false}
@@ -90,7 +98,7 @@ export default function CartPage(){
                                     cardPrice={'44.50'}
                                     regularPrice={'50.50'}
                                     name={'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»'}
-                                    discount={10}
+                                    discount={0}
                                     amount={2}
                                     />
                                 </div>
@@ -98,8 +106,8 @@ export default function CartPage(){
                             <div className={classes.payment}>
                                 <div className={classes.withdraw}>
                                     <div className={classes.switch}>
-                                        <div className={classes.body}>
-                                            <div></div>
+                                        <div className={classes.body} style={switchState ? {backgroundColor: '#70C05B'} : {backgroundColor: '#8F8F8F'}} onClick={switchState ? ()=>setSwitchState(false) : ()=>setSwitchState(true)}>
+                                            <div style={switchState ? {transform: 'translate(11px)'} : {transform: 'translate(-11px)'}}></div>
                                         </div>
                                         <div className={classes.text}>
                                             <p>Списать 200 ₽</p>
@@ -115,11 +123,11 @@ export default function CartPage(){
                                 <div className={classes.price_math}>
                                     <div>
                                         <p>3 товара</p>
-                                        <p>258,10 ₽</p>
+                                        <p>{parseFloat(getTotal).toFixed(2)} ₽</p>
                                     </div>
                                     <div>
                                         <p>Скидка</p>
-                                        <p>-8,01 ₽</p>
+                                        <p>-{discount} ₽</p>
                                     </div>
                                 </div>
                                 <div className={classes.line}>
@@ -128,7 +136,7 @@ export default function CartPage(){
                                 <div className={classes.total}>
                                     <div className={classes.total_price}>
                                         <p>Итог</p>
-                                        <p>250.09 ₽</p>
+                                        <p id='total_price'>{parseFloat(getTotal - discount).toFixed(2)} ₽</p>
                                     </div>
                                     <div className={classes.bonuses}>
                                         <img src={smile} alt="" />
@@ -136,10 +144,10 @@ export default function CartPage(){
                                     </div>
                                 </div>
                                 <div className={classes.submit}>
-                                    <div className={classes.warning}>
+                                    <div className={classes.warning} style={parseFloat(getTotal - discount) >= 1000 ? {display: 'none'} : null}>
                                         <p>Минимальная сумма заказа 1000р</p>
                                     </div>
-                                    <button type="submit">Оформить заказ</button>
+                                    <button type="submit" className={parseFloat(getTotal - discount) >= 1000 ? classes.active : null}>Оформить заказ</button>
                                 </div>
                             </div>
                         </div>
