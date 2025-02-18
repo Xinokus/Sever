@@ -25,6 +25,8 @@ import ForBabies from './categoryPage/categories/for-babies/for-babies'
 import Meat from './categoryPage/categories/meat/meat'
 import NonEdible from './categoryPage/categories/non-edible/non-edible'
 
+import ItemPage from './itemPage/itemPage'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -35,7 +37,7 @@ createRoot(document.getElementById('root')).render(
         <Route path={'/cart'} element={<CartPage/>}></Route>
         <Route path={'/contacts'} element={<ContactsPage/>}></Route>
         <Route path={'/favorite'} element={<FavoritePage/>}></Route>
-        <Route path={'/item'} element={<CategoryPage/>}></Route>
+        <Route path={'/item'} element={<ItemPage/>}></Route>
         <Route path={'/jobs'} element={<JobsPage/>}></Route>
         <Route path={'/orders'} element={<OrdersPage/>}></Route>
         <Route path={'/orders_table'} element={<CategoryPage/>}></Route>
@@ -54,6 +56,8 @@ createRoot(document.getElementById('root')).render(
         <Route path={'/catalog/for-babies'} element={<ForBabies/>}></Route>
         <Route path={'/catalog/meat'} element={<Meat/>}></Route>
         <Route path={'/catalog/non-edible'} element={<NonEdible/>}></Route>
+
+        <Route path='/catalog/milk-cheese-eggs/maslo-prostokvashino' element={<ItemPage/>}></Route>
       </Routes>
     </BrowserRouter>
   </StrictMode>,

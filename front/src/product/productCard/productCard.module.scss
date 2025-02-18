@@ -96,7 +96,11 @@
         }
     }
     .name{
-        @include RubikS;
+        a{
+            @include RubikS;
+            color: #414141;
+            text-decoration: none;
+        }
     }
     .stars{
         width: 96px;

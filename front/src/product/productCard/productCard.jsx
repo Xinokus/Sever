@@ -4,7 +4,7 @@ import noHeart from '../img/heart.png'
 import Heart from '../img/heartActive.png'
 import { useState } from 'react'
 
-export default function ProductCard({id, onSale, regularPrice, cardPrice, img, name, star1, star2, star3, star4, star5, discount}){
+export default function ProductCard({id, onSale, regularPrice, cardPrice, img, name, star1, star2, star3, star4, star5, discount, link}){
     const [isFavorite, addFavorite] = useState(false)
 
     return(
@@ -29,7 +29,7 @@ export default function ProductCard({id, onSale, regularPrice, cardPrice, img, n
                     </div>
                 </div>
                 <div className={classes.name}>
-                    <p>{name}</p>
+                    <a href={link}>{name}</a>
                 </div>
                 <div className={classes.stars}>
                     <img src={star1} alt="" />

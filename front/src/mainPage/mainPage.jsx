@@ -53,6 +53,7 @@ export default function MainPage(){
                             star4={ProductInfo[0].star4}
                             star5={ProductInfo[0].star5}
                             discount={ProductInfo[0].discount}
+                            
                         />
                         <ProductCard
                             id={1}
@@ -67,6 +68,7 @@ export default function MainPage(){
                             star4={ProductInfo[1].star4}
                             star5={ProductInfo[1].star5}
                             discount={ProductInfo[1].discount}
+                            link={'/catalog/milk-cheese-eggs/maslo-prostokvashino'}
                         />
                         <ProductCard
                             id={2}
