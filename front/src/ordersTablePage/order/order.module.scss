@@ -2,8 +2,409 @@
 
 .order{
     width: 1208px;
+    height: 56px;
     margin-bottom: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .person_info{
+        height: 56px;
+        display: flex;
+        align-items: center;
+        .order_id{
+            @include RubikBoldL;
+            color: #414141;
+            margin-right: 16px;
+        }
+        .person{
+            height: 56px;
+            padding: 8px;
+            padding-left: 10px;
+            display: flex;
+            align-items: center;
+            img{
+                margin-right: 10px;
+            }
+            p{
+                @include RubikS;
+                color: #414141;
+            }
+        }
+    }
+    .order_info{
+        height: 40px;
+        display: flex;
+        align-items: center;
+        .phone{
+            height: 24px;
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            img{
+                margin-right: 8px;
+            }
+            p{
+                @include RubikS;
+                color: #414141;
+                text-decoration: underline;
+            }
+        }
+        .status{
+            width: 200px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            border-radius: 4px;
+            border: none;
+            background-color: #F3F2F1;
+            box-shadow: 1px 2px 4px 0px rgb(0, 0, 0, 0.1);
+            cursor: pointer;
+            .drop_down_menu{
+                width: 200px;
+                height: 280px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-direction: column;
+                border-radius: 4px;
+                box-shadow: 1px 2px 4px 0px rgb(0, 0, 0, 0.1);
+                background-color: white;
+                position: relative;
+                z-index: 5;
+                .option{
+                    width: 200px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 8px;
+                    box-sizing: border-box;
+                    position: relative;
+                    z-index: 5;
+                    border-radius: 4px;
+                    p{
+                        width: 156px;
+                        @include RubikS;
+                    }
+                    &:hover{
+                        background-color: #FCD5BA;
+                    }
+                    &.new{
+                        p{
+                            width: 128px !important;
+                        }
+                        color: #414141;
+                    }
+                    &.collected{
+                        color: #70C05B;
+                    }
+                    &.delivering{
+                        color: #414141;
+                    }
+                    &.confirmed{
+                        color: #008C49;
+                    }
+                    &.unconfirmed{
+                        color: #FCA21C;
+                    }
+                    &.return{
+                        color: #D80000;
+                    }
+                    &.returned{
+                        color: #1CB9FC;
+                    }
+                }
+            }
+            >.option{
+                width: 200px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 8px;
+                box-sizing: border-box;
+                border-radius: 4px;
+                position: absolute;
+                color: #414141;
+                &.new{
+                    color: #414141;
+                }
+                &.collected{
+                    color: white;
+                    background-color: #70C05B;
+                    overflow: hidden;
+                    img{
+                        filter: drop-shadow(0px 40px 0px white);
+                        transform: translateY(-40px);
+                    }
+                }
+                &.delivering{
+                    color: #414141;
+                }
+                &.confirmed{
+                    color: white;
+                    background-color: #008C49;
+                    overflow: hidden;
+                    img{
+                        filter: drop-shadow(0px 40px 0px white);
+                        transform: translateY(-40px);
+                    }
+                }
+                &.unconfirmed{
+                    color: white; 
+                    background-color: #FCA21C;
+                    overflow: hidden;
+                    img{
+                        filter: drop-shadow(0px 40px 0px white);
+                        transform: translateY(-40px);
+                    }
+                }
+                &.return{
+                    color: white;
+                    background-color: #D80000;
+                    overflow: hidden;
+                    img{
+                        filter: drop-shadow(0px 40px 0px white);
+                        transform: translateY(-40px);
+                    }
+                }
+                &.returned{
+                    color: white;
+                    background-color: #1CB9FC;
+                    overflow: hidden;
+                    img{
+                        filter: drop-shadow(0px 40px 0px white);
+                        transform: translateY(-40px);
+                    }
+                }
+                p{
+                    width: 128px;
+                    @include RubikS;
+                }
+                img:nth-of-type(1){
+                    margin-right: 1px;
+                }
+                &.delivering{
+                    background-color: #F3F2F1;
+                }
+            }
+        }
+        .show_order{
+            button{
+                width: 200px;
+                height: 40px;
+                margin-right: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px;
+                box-sizing: border-box;
+                border-radius: 4px;
+                border: none;
+                background-color: #F3F2F1;
+                cursor: pointer;
+                p{
+                    width: 152px;
+                    @include RubikS;
+                    color: #414141;
+                }
+            }
+        }
+        .chat{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #F3F2F1;
+        }
+    }
+}
+.change_day_popup{
+    width: 366px;
+    height: 617px;
+    background-color: white;
+    transform: translate(862px, -16px);
+    z-index: 10;
+    box-shadow: 4px 8px 16px rgb(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    position: absolute;
+    .title{
+        width: 326px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            @include RubikM;
+            color: #414141;
+        }
+        button{
+            width: 40px;
+            height: 40px;
+            background-color: #F3F2F1;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+    .change_day{
+        width: 326px;
+        height: 513px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        .month_pick{
+            width: 326px;
+            height: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .month{
+                @include RubikBoldM;
+                color: #414141;
+            }
+            .left_or_right{
+                width: 80px;
+                height: 32px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                button{
+                    width: 32px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    border-radius: 4px;
+                    background-color: #F3F2F1;
+                    cursor: pointer;
+                }
+            }
+        }
+        .day_pick{
+            width: 326px;
+            height: 242px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            .day_name{
+                width: 326px;
+                height: 27px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include RubikM;
+                p{
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .day_line{
+                width: 326px;
+                height: 27px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include RubikM;
+                p{
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #8F8F8F;
+                    border-radius: 27px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #FF6633;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .time_pick{
+            width: 326px;
+            height: 97px;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            flex-direction: column;
+            .row{
+                width: 326px;
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                .time{
+                    width: 158px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #F3F2F1;
+                    color: #414141;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    p{
+                        @include RubikS;
+                    }
+                    &.active{
+                        background-color: #70C05B;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .picked_time{
+            width: 326px;
+            height: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            p{
+                @include RubikM;
+                color: #414141;
+            }
+            p:nth-of-type(1){
+                margin-right: 16px;
+            }
+        }
+        .confirm{
+            button{
+                width: 326px;
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include RubikS;
+                color: white;
+                border-radius: 4px;
+                border: none;
+                padding: 8px;
+                box-sizing: border-box;
+                background-color: #FF6633;
+                cursor: pointer;
+                p{
+                    width: 278px;
+                    height: 24px;
+                }
+            }
+        }
+    }
 }

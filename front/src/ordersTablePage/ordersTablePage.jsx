@@ -3,7 +3,12 @@ import classes from './ordersTablePage.module.scss'
 import Header from '../header/header'
 import Footer from '../footer/footer'
 
+import pfp from './img/avatar.png'
+import check from './img/check.png'
+import clock from './img/clock.png'
+import calendar from './img/calendar.png'
 import arrowRight from './img/arrow_right.png'
+import Order from './order/order'
 
 export default function AdminOrdersPage(){
     return(
@@ -22,7 +27,7 @@ export default function AdminOrdersPage(){
                     </div>
                     <div className={classes.date}>
                         <div className={classes.calendar}>
-                            <img src="" alt="" />
+                            <img src={calendar} alt="" />
                         </div>
                         <div className={`${classes.select_day} ${classes.active}`}>
                             <p>Сегодня</p>
@@ -41,11 +46,11 @@ export default function AdminOrdersPage(){
                         <div className={classes.order_line}>
                             <div className={classes.time_and_amount}>
                                 <div className={classes.time}>
-                                    <img src="" alt="" />
+                                    <img src={clock} alt="" />
                                     <p>11:00</p>
                                 </div>
                                 <div className={classes.amount}>
-                                    <img src="" alt="" />
+                                    <img src={check} alt="" />
                                     <p>5 / 5</p>
                                 </div>
                             </div>
@@ -60,7 +65,12 @@ export default function AdminOrdersPage(){
                                 </div>
                             </div>
                             <div className={classes.orders}>
-                                
+                                <Order
+                                    id={355}
+                                    pfp={pfp}
+                                    name={'Антон'}
+                                    phoneNumber={'7 912 888 77 55'}
+                                />
                             </div>
                         </div>
                     </div>
