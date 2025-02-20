@@ -1,0 +1,42 @@
+@import '../fonts.scss';
+
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #FBF8EC;
+
+    .section{
+        width: 1208px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        .title{
+            @include RubikHeaderL;
+            color: #414141;
+            margin-bottom: 24px;
+        }
+        .query{
+            @include RubikL;
+            color: #414141;
+            margin-bottom: 40px;
+            span{
+                color: #FF6633;
+            }
+        }
+        .items{
+            width: 1208px;
+            display: flex;
+            flex-direction: column;
+            .line{
+                width: 1208px;
+                height: 349px;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

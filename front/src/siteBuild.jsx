@@ -10,6 +10,8 @@ import JobsPage from './jobsPage/jobsPage'
 import AboutPage from './aboutPage/aboutPage'
 import ContactsPage from './contactsPage/contactsPage'
 import OrdersPage from './ordersPage/ordersPage'
+import ResultsPage from './resultsPage/resultsPage'
+import AdminOrdersPage from './ordersTablePage/ordersTablePage'
 
 import MilkCheeseEggs from './categoryPage/categories/milk-cheese-eggs/milk-cheese-eggs'
 import Bread from './categoryPage/categories/bread/bread'
@@ -40,8 +42,9 @@ createRoot(document.getElementById('root')).render(
         <Route path={'/item'} element={<ItemPage/>}></Route>
         <Route path={'/jobs'} element={<JobsPage/>}></Route>
         <Route path={'/orders'} element={<OrdersPage/>}></Route>
-        <Route path={'/orders_table'} element={<CategoryPage/>}></Route>
         <Route path={'/search'} element={<CategoryPage/>}></Route>
+        <Route path={'/results'} element={<ResultsPage/>}></Route>
+        <Route path={'/admin-orders'} element={<AdminOrdersPage/>}></Route>
 
         <Route path={'/catalog/milk-cheese-eggs'} element={<MilkCheeseEggs/>}></Route>
         <Route path={'/catalog/bread'} element={<Bread/>}></Route>

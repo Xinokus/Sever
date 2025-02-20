@@ -16,6 +16,7 @@ export default function CartPage(){
     const [getTotal, setTotal] = useState(258.1)
     const [selectAll, setSelectAll] = useState(false)
     const [discount, setDiscount] = useState(8.01)
+    let totalPrice = 0
     let [itemAmount, setItemAmount] = useState(0)
 
     const [switchState, setSwitchState] = useState(true)
@@ -25,10 +26,26 @@ export default function CartPage(){
         CheckTotal()
         let items = document.getElementsByName('cart_item')
         setItemAmount(items.length)
+
+        SetTotalPrice()
     })
+
+    function SetTotalPrice(){
+        let items = document.getElementsByName('item_price')
+        for(let i = 0; i < items.length; i++){
+            console.log(parseFloat(items[i].innerHTML))
+            totalPrice += parseFloat(items[i].innerHTML)
+            console.log(totalPrice)
+            setTotal(totalPrice)
+        }
+    }
 
     function SelectAll(){
         setSelectAll(true)
+    }
+
+    function DeselectAll(){
+        setSelectAll(false)
     }
 
     function CheckTotal(){
@@ -57,7 +74,7 @@ export default function CartPage(){
                             <div className={classes.items}>
                                 <div className={classes.select}>
                                     <div className={classes.select_all}>
-                                        <button type="button" onClick={SelectAll}><img src={minus} alt="" /></button>
+                                        <button type="button" onClick={selectAll ? DeselectAll : SelectAll}><img src={minus} alt="" /></button>
                                         <p>Выделить всё</p>
                                     </div>
                                     <div className={classes.delete}>
@@ -136,7 +153,7 @@ export default function CartPage(){
                                 <div className={classes.total}>
                                     <div className={classes.total_price}>
                                         <p>Итог</p>
-                                        <p id='total_price'>{parseFloat(getTotal - discount).toFixed(2)} ₽</p>
+                                        <p id='total_price'>{(getTotal - discount).toFixed(2)} ₽</p>
                                     </div>
                                     <div className={classes.bonuses}>
                                         <img src={smile} alt="" />

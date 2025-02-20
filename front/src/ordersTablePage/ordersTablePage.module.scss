@@ -1,0 +1,192 @@
+@import '../fonts.scss';
+
+.main{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FBF8EC;
+    padding-top: 24px;
+    padding-bottom: 80px;
+    .reroute{
+        height: 24px;
+        width: 1208px;
+        display: flex;
+        align-items: center;
+        a{
+            @include RubikXS;
+            color: #414141;
+            margin-right: 16px;
+            text-decoration: none;
+            &:last-child{
+                color: #8F8F8F;
+            }
+        }
+        img{
+            margin-right: 16px;
+        }
+    }
+    .section{
+        width: 1208px;
+        margin-top: 24px;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        .title{
+            height: 96px;
+            display: flex;
+            p:nth-of-type(1){
+                @include RubikHeaderXL;
+                color: #414141;
+                margin-right: 20px;
+            }
+            p:nth-of-type(2){
+                height: 32px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 8px;
+                padding-right: 8px;
+                border-radius: 4px;
+                background-color: #FF6633;
+                color: white;
+                @include RubikS;
+            }
+        }
+        .date{
+            height: 60px;
+            display: flex;
+            >div{
+                margin-right: 16px;
+                background-color: #F3F2F1;
+                border-radius: 4px;
+            }
+            .calendar{
+                width: 60px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            .select_day{
+                height: 60px;
+                padding-left: 16px;
+                padding-right: 16px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                p:nth-of-type(1){
+                    width: 107px;
+                    @include RubikL;
+                    color: #414141;
+                    margin-right: 8px;
+                }
+                p:nth-of-type(2){
+                    height: 32px;
+                    display: flex;
+                    align-items: center;
+                    background-color: #FF6633;
+                    border-radius: 4px;
+                    color: white;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    @include RubikS;
+                }
+                &.active{
+                    background-color: #70C05B;
+                    p:nth-of-type(1){
+                        color: white;
+                    }
+                }
+            }
+        }
+        .orders_table{
+            width: 1208px;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            margin-top: 60px;
+            .order_line{
+                width: 1208px;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                .time_and_amount{
+                    width: 1208px;
+                    height: 54px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .time{
+                        height: 54px;
+                        display: flex;
+                        align-items: center;
+                        img{
+                            margin-right: 16px;
+                        }
+                        p{
+                            @include RubikHeaderM;
+                            color: #414141;
+                        }
+                    }
+                    .amount{
+                        height: 36px;
+                        display: flex;
+                        align-items: center;
+                        img{
+                            margin-right: 10px;
+                        }
+                        p{
+                            @include RubikL;
+                            color: #414141;
+                        }
+                    }
+                }
+                .cities{
+                    height: 40px;
+                    margin-top: 16px;
+                    display: flex;
+                    .city{
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        margin-right: 10px;
+                        padding-left: 8px;
+                        padding-right: 8px;
+                        background-color: #F3F2F1;
+                        border-radius: 4px;
+                        p:nth-of-type(1){
+                            @include RubikS;
+                            color: #414141;
+                            margin-right: 8px;
+                        }
+                        p:nth-of-type(2){
+                            @include RubikXS;
+                            color: white;
+                            background-color: #FF6633;
+                            height: 24px;
+                            padding-left: 8px;
+                            padding-right: 8px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 4px;
+                        }
+                        &.active{
+                            background-color: #70C05B;
+                            p:nth-of-type(1){
+                                color: white;
+                            }
+                        }
+                    }
+                }
+                .orders{
+                    width: 1208px;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

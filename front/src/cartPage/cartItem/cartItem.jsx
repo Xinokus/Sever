@@ -88,7 +88,7 @@ export default function CartItem({isSelected, onSale, image, name, cardPrice, re
                         </div>
                     </div>
                     <div className={classes.price}>
-                        <p style={onSale ? null : {display: "none"}}>{((cardPrice * getAmount) - ((cardPrice * amount) * discount / 100)).toFixed(2)} ₽</p>
+                        <p name={'item_price'} style={onSale ? null : {display: "none"}}>{((cardPrice * getAmount) - ((cardPrice * amount) * discount / 100)).toFixed(2)} ₽</p>
                         <p className={onSale ? classes.active : null}>{(cardPrice * getAmount).toFixed(2)} ₽</p>
                     </div>
                 </div>
