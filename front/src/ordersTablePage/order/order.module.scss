@@ -204,10 +204,10 @@
                 border: none;
                 background-color: #F3F2F1;
                 cursor: pointer;
+                color: #414141;
                 p{
                     width: 152px;
                     @include RubikS;
-                    color: #414141;
                 }
             }
         }
@@ -223,11 +223,17 @@
         }
     }
 }
+.items{
+    width: 1208px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
 .change_day_popup{
     width: 366px;
     height: 617px;
     background-color: white;
-    transform: translate(862px, -16px);
+    transform: translate(862px, 80px);
     z-index: 10;
     box-shadow: 4px 8px 16px rgb(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -237,7 +243,8 @@
     justify-content: space-between;
     align-items: start;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
+    top: 0;
     .title{
         width: 326px;
         height: 40px;
@@ -322,18 +329,26 @@
                 justify-content: space-between;
                 align-items: center;
                 @include RubikM;
+                p.non_interactable{
+                    color: #8F8F8F;
+                    cursor: default;
+                }
                 p{
                     width: 40px;
                     height: 40px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    color: #8F8F8F;
+                    color: #414141;
                     border-radius: 27px;
                     cursor: pointer;
                     &:hover{
                         background-color: #FF6633;
                         color: white;
+                    }
+                    &.non_interactable:hover{
+                        background: none;
+                        color: #8f8f8f;
                     }
                 }
             }
@@ -365,6 +380,10 @@
                         @include RubikS;
                     }
                     &.active{
+                        background-color: #70C05B;
+                        color: white;
+                    }
+                    &:hover{
                         background-color: #70C05B;
                         color: white;
                     }
@@ -403,6 +422,136 @@
                 p{
                     width: 278px;
                     height: 24px;
+                }
+            }
+        }
+    }
+}
+
+.chat_popup{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(252, 213, 186, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .chat_window{
+        width: 600px;
+        height: 661px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 4px;
+        box-shadow: 8px 16px 32px 0px rgb(255, 102, 51, 0.2);
+        .close{
+            width: 600px;
+            height: 40px;
+            display: flex;
+            justify-content: end;
+            align-items: start;
+            button{
+                width: 40px;
+                height: 40px;
+                border-radius: 4px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #F3F2F1;
+                border: none;
+                cursor: pointer;
+            }
+        }
+        .comment_section{
+            width: 600px;
+            height: 589px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 60px;
+            box-sizing: border-box;
+            .title{
+                @include RubikHeaderS;
+                color: #414141;
+            }
+            .comments{
+                width: 400px;
+                height: 361px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-direction: column;
+                .comment{
+                    width: 400px;
+                    display: flex;
+                    flex-direction: column;
+                    >p{
+                        @include RubikS;
+                        color: #8F8F8F;
+                    }
+                    >div{
+                        width: 400px;
+                        border: 1px solid #BFBFBF;
+                        box-sizing: border-box;
+                        padding: 8px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                        border-radius: 4px;
+                        >p{
+                            @include RubikS;
+                            color: #414141;
+                        }
+                    }
+                }
+                .input{
+                    width: 400px;
+                    height: 102px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    textarea{
+                        resize: none;
+                        width: 400px;
+                        height: 102px;
+                        padding: 8px;
+                        padding-left: 16px;
+                        padding-right: 16px;
+                        box-sizing: border-box;
+                        @include RubikS;
+                        border: 1px solid #BFBFBF;
+                        color: #414141;
+                        border-radius: 4px;
+                    }
+                }
+            }
+            .send{
+                width: 400px;
+                height: 68px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                button{
+                    width: 400px;
+                    height: 68px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #FCD5BA;
+                    color: #FF6633;
+                    border: none;
+                    border-radius: 4px;
+                    @include RubikL;
+                    cursor: pointer;
+                    &:hover{
+                        color: white;
+                        background-color: #FF6633;
+                    }
                 }
             }
         }

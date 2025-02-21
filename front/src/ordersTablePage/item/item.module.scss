@@ -1,0 +1,64 @@
+@import '../../fonts.scss';
+
+.item{
+    width: 272px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 1px 2px 4px 0px rgb(0, 0, 0, 0.1);
+    .image{
+        width: 272px;
+        height: 160px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        background-repeat: no-repeat;
+        background-position: center;
+        .amount{
+            height: 32px;
+            display: flex;
+            align-items: center;
+            margin-left: 8px;
+            margin-top: 8px;
+            @include RubikBoldM;
+            color: #414141;
+            img{
+                margin-right: 4px;
+            }
+        }
+        .square{
+            height: 32px;
+            display: flex;
+            align-items: center;
+            margin-right: 8px;
+            margin-top: 8px;
+            @include RubikM;
+            color: #414141;
+            img{
+                margin-right: 4px;
+            }
+        }
+    }
+    .info{
+        width: 272px;
+        height: 90px;
+        padding: 8px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+        .category{
+            @include RubikXS;
+            color: #414141;
+        }
+        .name{
+            @include RubikS;
+            color: #414141;
+        }
+    }
+}

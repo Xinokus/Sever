@@ -73,6 +73,48 @@ export default function AdminOrdersPage(){
                                 />
                             </div>
                         </div>
+                        <div className={classes.order_line}>
+                            <div className={classes.time_and_amount}>
+                                <div className={classes.time}>
+                                    <img src={clock} alt="" />
+                                    <p>14:00</p>
+                                </div>
+                                <div className={classes.amount}>
+                                    <img src={check} alt="" />
+                                    <p>8 / 8</p>
+                                </div>
+                            </div>
+                            <div className={classes.cities}>
+                                <div className={`${classes.city} ${classes.active}`}>
+                                    <p>Усть-Ижма</p>
+                                    <p>3</p>
+                                </div>
+                                <div className={classes.city}>
+                                    <p>Галово</p>
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div className={classes.orders}>
+                                <Order
+                                    id={355}
+                                    pfp={pfp}
+                                    name={'Антон'}
+                                    phoneNumber={'7 912 888 77 55'}
+                                />
+                                <Order
+                                    id={666}
+                                    pfp={pfp}
+                                    name={'Дмитрий'}
+                                    phoneNumber={'7 912 888 77 55'}
+                                />
+                                <Order
+                                    id={112}
+                                    pfp={pfp}
+                                    name={'Брух'}
+                                    phoneNumber={'7 912 888 77 55'}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>

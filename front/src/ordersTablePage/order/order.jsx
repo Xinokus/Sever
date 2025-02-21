@@ -19,13 +19,71 @@ import left from './img/left.png'
 import right from './img/right.png'
 import x from './img/x.png'
 import white_check from './img/white_check.png'
+import upload from './img/upload.png'
+import calendar from './img/calendar.png'
 
-import { useState } from 'react'
+import Item from '../item/item'
+import { ProductInfo } from '../../product/productInfo.js'
+import { useEffect, useState } from 'react'
 
 export default function Order({id, pfp, name, phoneNumber}){
     const [dropDownState, setDropDownState] = useState(false)
     const [dropDownOption, setDropDownOption] = useState(0)
     const [changeTimePopupState, setChangeTimePopupState] = useState(false)
+    const [chatPopupState, setChatPopupState] = useState(false)
+    const [deliveryTime, setDeliveryTime] = useState('14:00')
+    const [deliveryDay, setDeliveryDay] = useState(8)
+    const [showFullOrderState, setShowFullOrderState] = useState(false)
+    const [chatButtonState, setChatButtonState] = useState(true)
+    const [scheduleButtonState, setScheduleButtonState] = useState(false)
+
+    function ShowFullOrder(){
+        setShowFullOrderState(true)
+    }
+
+    useEffect(()=>{
+        CheckOrderState()
+    })
+
+    function CheckOrderState(){
+        switch(dropDownOption){
+            case 0:
+                setChatButtonState(false)
+                setScheduleButtonState(true)
+                break;
+            case 1:
+                setChatButtonState(false)
+                setScheduleButtonState(true)
+                break;
+            case 2:
+                setChatButtonState(true)
+                setScheduleButtonState(false)
+                break;
+            case 3:
+                setChatButtonState(true)
+                setScheduleButtonState(false)
+                break;
+            case 4:
+                setChatButtonState(true)
+                setScheduleButtonState(false)
+                break;
+            case 5:
+                setChatButtonState(true)
+                setScheduleButtonState(false)
+                break;
+            case 6:
+                setChatButtonState(true)
+                setScheduleButtonState(false)
+                break;
+        }
+    }
+
+    function SetBorderToInput(input){
+        document.getElementById(input).style.border = '1px solid #70C05B'
+    }
+    function RemoveBorderFromInput(input){
+        document.getElementById(input).style.border = '1px solid #BFBFBF'
+    }
 
     return(
         <>
@@ -63,15 +121,46 @@ export default function Order({id, pfp, name, phoneNumber}){
                         </div>
                     </div>
                     <div className={classes.show_order}>
-                        <button type="button"><img src={eye} alt="" /><p>Просмотреть заказ</p></button>
+                        <button type="button" onClick={ShowFullOrder} style={showFullOrderState ? {backgroundColor: '#FF6633', color: 'white'} : null}><img src={showFullOrderState ? upload : eye} alt="" /><p>{showFullOrderState ? 'Выгрузить в 1с' : 'Просмотреть заказ'}</p></button>
                     </div>
-                    <div className={classes.chat} onClick={()=>setChangeTimePopupState(true)}>
-                        <img src={chat} alt="" />
+                    <div className={classes.chat} onClick={scheduleButtonState ? ()=>setChangeTimePopupState(true) : ()=>setChatPopupState(true)}>
+                        <img src={chat} alt="" style={chatButtonState ? null : {display: 'none'}}/>
+                        <img src={calendar} alt="" style={scheduleButtonState ? null : {display: 'none'}}/>
                     </div>
                 </div>
             </div>
+            <div style={showFullOrderState ? {display: 'flex'} : {display: 'none'}} className={classes.items}>
+                <Item
+                image={ProductInfo[0].img}
+                amount={4}
+                square={40}
+                category={'Снеки'}
+                name={'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»'}
+                />
+                <Item
+                image={ProductInfo[0].img}
+                amount={4}
+                square={40}
+                category={'Снеки'}
+                name={'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»'}
+                />
+                <Item
+                image={ProductInfo[0].img}
+                amount={4}
+                square={40}
+                category={'Снеки'}
+                name={'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»'}
+                />
+                <Item
+                image={ProductInfo[0].img}
+                amount={4}
+                square={40}
+                category={'Снеки'}
+                name={'Комбайн КЗС-1218 «ДЕСНА-ПОЛЕСЬЕ GS12»'}
+                />
+            </div>
 
-            <div style={changeTimePopupState ? {display: 'flex'} : {display: 'none'}} className={classes.change_day_popup}>
+            <div style={changeTimePopupState && scheduleButtonState ? {display: 'flex'} : {display: 'none'}} className={classes.change_day_popup}>
                 <div className={classes.title}>
                     <p>Изменить время</p>
                     <button type="button" onClick={()=>setChangeTimePopupState(false)}><img src={x} alt="" /></button>
@@ -97,75 +186,111 @@ export default function Order({id, pfp, name, phoneNumber}){
                             <p>Вс</p>
                         </div>
                         <div className={classes.day_line}>
-                            <p>28</p>
-                            <p>29</p>
-                            <p>30</p>
-                            <p>1</p>
-                            <p>2</p>
-                            <p>3</p>
-                            <p>4</p>
+                            <p className={classes.non_interactable}>28</p>
+                            <p className={classes.non_interactable}>29</p>
+                            <p className={classes.non_interactable}>30</p>
+                            <p onClick={()=>setDeliveryDay(1)}>1</p>
+                            <p onClick={()=>setDeliveryDay(2)}>2</p>
+                            <p onClick={()=>setDeliveryDay(3)}>3</p>
+                            <p onClick={()=>setDeliveryDay(4)}>4</p>
                         </div>
                         <div className={classes.day_line}>
-                            <p>5</p>
-                            <p>6</p>
-                            <p>7</p>
-                            <p>8</p>
-                            <p>9</p>
-                            <p>10</p>
-                            <p>11</p>
+                            <p onClick={()=>setDeliveryDay(5)}>5</p>
+                            <p onClick={()=>setDeliveryDay(6)}>6</p>
+                            <p onClick={()=>setDeliveryDay(7)}>7</p>
+                            <p onClick={()=>setDeliveryDay(8)}>8</p>
+                            <p onClick={()=>setDeliveryDay(9)}>9</p>
+                            <p onClick={()=>setDeliveryDay(10)}>10</p>
+                            <p onClick={()=>setDeliveryDay(11)}>11</p>
                         </div>
                         <div className={classes.day_line}>
-                            <p>12</p>
-                            <p>13</p>
-                            <p>14</p>
-                            <p>15</p>
-                            <p>16</p>
-                            <p>17</p>
-                            <p>18</p>
+                            <p onClick={()=>setDeliveryDay(12)}>12</p>
+                            <p onClick={()=>setDeliveryDay(13)}>13</p>
+                            <p onClick={()=>setDeliveryDay(14)}>14</p>
+                            <p onClick={()=>setDeliveryDay(15)}>15</p>
+                            <p onClick={()=>setDeliveryDay(16)}>16</p>
+                            <p onClick={()=>setDeliveryDay(17)}>17</p>
+                            <p onClick={()=>setDeliveryDay(18)}>18</p>
                         </div>
                         <div className={classes.day_line}>
-                            <p>19</p>
-                            <p>20</p>
-                            <p>21</p>
-                            <p>22</p>
-                            <p>23</p>
-                            <p>24</p>
-                            <p>25</p>
+                            <p onClick={()=>setDeliveryDay(19)}>19</p>
+                            <p onClick={()=>setDeliveryDay(20)}>20</p>
+                            <p onClick={()=>setDeliveryDay(21)}>21</p>
+                            <p onClick={()=>setDeliveryDay(22)}>22</p>
+                            <p onClick={()=>setDeliveryDay(23)}>23</p>
+                            <p onClick={()=>setDeliveryDay(24)}>24</p>
+                            <p onClick={()=>setDeliveryDay(25)}>25</p>
                         </div>
                         <div className={classes.day_line}>
-                            <p>26</p>
-                            <p>27</p>
-                            <p>28</p>
-                            <p>29</p>
-                            <p>30</p>
-                            <p>31</p>
-                            <p>1</p>
+                            <p onClick={()=>setDeliveryDay(26)}>26</p>
+                            <p onClick={()=>setDeliveryDay(27)}>27</p>
+                            <p onClick={()=>setDeliveryDay(28)}>28</p>
+                            <p onClick={()=>setDeliveryDay(29)}>29</p>
+                            <p onClick={()=>setDeliveryDay(30)}>30</p>
+                            <p onClick={()=>setDeliveryDay(31)}>31</p>
+                            <p className={classes.non_interactable}>1</p>
                         </div>
                     </div>
                     <div className={classes.time_pick}>
                         <div className={classes.row}>
-                            <div className={classes.time}>
+                            <div onClick={()=>setDeliveryTime('11:00')} className={deliveryTime == '11:00' ? `${classes.time} ${classes.active}` : classes.time}>
                                 <p>11:00</p>
                             </div>
-                            <div className={`${classes.time} ${classes.active}`}>
+                            <div onClick={()=>setDeliveryTime('14:00')} className={deliveryTime == '14:00' ? `${classes.time} ${classes.active}` : classes.time}>
                                 <p>14:00</p>
                             </div>
                         </div>
                         <div className={classes.row}>
-                            <div className={classes.time}>
+                            <div onClick={()=>setDeliveryTime('18:00')} className={deliveryTime == '18:00' ? `${classes.time} ${classes.active}` : classes.time}>
                                 <p>18:00</p>
                             </div>
-                            <div className={classes.time}>
+                            <div onClick={()=>setDeliveryTime('20:00')} className={deliveryTime == '20:00' ? `${classes.time} ${classes.active}` : classes.time}>
                                 <p>20:00</p>
                             </div>
                         </div>
                     </div>
                     <div className={classes.picked_time}>
-                        <p>8 апреля 2021</p>
-                        <p>14:00</p>
+                        <p>{deliveryDay} апреля 2021</p>
+                        <p>{deliveryTime}</p>
                     </div>
                     <div className={classes.confirm}>
-                        <button type="button"><img src={white_check} alt="" /><p>Подтвердить</p></button>
+                        <button onClick={()=>setChangeTimePopupState(false)} type="button"><img src={white_check} alt="" /><p>Подтвердить</p></button>
+                    </div>
+                </div>
+            </div>
+
+            <div className={classes.chat_popup} style={chatPopupState ? {visibility: 'visible'} : {visibility: 'hidden'}}>
+                <div className={classes.chat_window}>
+                    <div className={classes.close}>
+                        <button type="button" onClick={()=>setChatPopupState(false)}><img src={x} alt="" /></button>
+                    </div>
+                    <div className={classes.comment_section}>
+                        <div className={classes.title}>
+                            <p>Комментарии</p>
+                        </div>
+                        <div className={classes.comments}>
+                            <div className={classes.comment}>
+                                <p>Дмитрий (курьер) 21.01.2021</p>
+                                <div>
+                                    <p>У клиента были гнилые половина помидоров. Он сказал возьмет их. Надо возместить бонусами.</p>
+                                </div>
+                            </div>
+                            <div className={classes.comment}>
+                                <p>Аня (менеджер) 22.02.2021</p>
+                                <div>
+                                    <p>Созвонились с клиентом. Я начислила 50 балов.</p>
+                                </div>
+                            </div>
+                            <div className={classes.input}>
+                                <textarea name="comment" id="comment"
+                                onBlur={() => RemoveBorderFromInput('comment')} 
+                                onFocus={() => SetBorderToInput('comment')}
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div className={classes.send}>
+                            <button type="button"><p>Отправить</p></button>
+                        </div>
                     </div>
                 </div>
             </div>
