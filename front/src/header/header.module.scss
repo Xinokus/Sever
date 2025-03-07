@@ -271,10 +271,8 @@ header{
     position: fixed;
     z-index: 10;
     top: 0px;
-    visibility: hidden;
-    opacity: 0;
     transition: 0.3s all ease;
-    background-color: rgb(65, 65, 65, 0.3);
+    background-color: rgb(252, 213, 186, 0.8);
     .window{
         width: 420px;
         height: 431px;
@@ -298,7 +296,7 @@ header{
                 cursor: pointer;
             }
         }
-        .main{
+        .phone_enter{
             width: 420px;
             height: 359px;
             display: flex;
@@ -337,6 +335,459 @@ header{
                         @include RubikL;
                         box-sizing: border-box;
                         box-sizing: border-box;
+                    }
+                    &.active{
+                        background-color: #70C05B;
+                    }
+                }
+                .submit{
+                    width: 260px;
+                    height: 68px;
+                    button{
+                        width: 260px;
+                        height: 68px;
+                        background-color: #FCD5BA;
+                        border: none;
+                        color: #FF6633;
+                        @include RubikL;
+                        border-radius: 4px;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #FF6633;
+                            color: white;
+                        }
+                    }
+                }
+            }
+            .other{
+                width: 260px;
+                height: 32px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .register{
+                    width: 121px;
+                    height: 32px;
+                    button{
+                        width: 121px;
+                        height: 32px;
+                        border: 1px solid #70C05B;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        background: none;
+                        color: #70C05B;
+                        @include RubikXS;
+                        cursor: pointer;
+                        &:hover{
+                            background-color: #70C05B;
+                            color: white;
+                        }
+                    }
+                }
+                .return{
+                    width: 111px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    @include RubikXS;
+                    color: #606060;
+                    padding: 4px;
+                    padding-left: 8px;
+                    padding-right: 8px;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    p:hover{
+                        text-decoration: underline;
+                    }
+                }
+                .forgor{
+                    width: 123px;
+                    height: 32px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    @include RubikXS;
+                    color: #414141;
+                    p:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+.register_popup{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    transition: 0.3s all ease;
+    background-color: rgb(252, 213, 186, 0.8);
+    .window{
+        width: 687px;
+        height: 998px;
+        background-color: white;
+        border-radius: 4px;
+        .close_window{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            button{
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+        }
+    }
+    .registration_form{
+        width: 687px;
+        height: 926px;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        .title{
+            @include RubikHeaderS;
+            color: #414141;
+        }
+        .required{
+            width: 552px;
+            height: 435px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            .text{
+                @include RubikHeaderXS;
+                color: #414141;
+            }
+            .inputs{
+                width: 552px;
+                height: 384px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                .left{
+                    width: 260px;
+                    height: 384px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: column;
+                    .phone, .last_name, .first_name, .password, .repeat_password{
+                        width: 260px;
+                        height: 64px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        flex-direction: column;
+                        label{
+                            @include RubikS;
+                            color: #606060;
+                        }
+                        input{
+                            width: 260px;
+                            height: 40px;
+                            border: 1px solid #606060;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                            padding-left: 16px;
+                            @include RubikS;
+                            color: #414141;
+                        }
+                        img{
+                            transform: translate(225px, 32px);
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .right{
+                    width: 260px;
+                    height: 304px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: column;
+                    .date, .region, .city{
+                        width: 260px;
+                        height: 64px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        flex-direction: column;
+                        label{
+                            @include RubikS;
+                            color: #606060;
+                        }
+                        input{
+                            width: 260px;
+                            height: 40px;
+                            border: 1px solid #606060;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                            padding-left: 16px;
+                            @include RubikS;
+                            color: #414141;
+                        }
+                    }
+                    .gender{
+                        width: 260px;
+                        height: 64px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: start;
+                        flex-direction: column;
+                        >p{
+                            @include RubikS;
+                            color: #606060;
+                        }
+                        .switch{
+                            width: 260px;
+                            height: 40px;
+                            padding: 4px;
+                            box-sizing: border-box;
+                            border-radius: 4px;
+                            background-color: #F3F2F1;
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            p{
+                                width: 126px;
+                                height: 32px;
+                                border-radius: 4px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                @include RubikXS;
+                                color: #414141;
+                                cursor: pointer;
+                                &.active{
+                                    background-color: #70C05B;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .not_required{
+            width: 552px;
+            height: 155px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            .text{
+                @include RubikHeaderXS;
+                color: #414141;
+            }
+            .inputs{
+                width: 552px;
+                height: 104px;
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                .email{
+                    width: 260px;
+                    height: 64px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: column;
+                    label{
+                        @include RubikS;
+                        color: #606060;
+                    }
+                    input{
+                        width: 260px;
+                        height: 40px;
+                        border: 1px solid #606060;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        padding-left: 16px;
+                        @include RubikS;
+                        color: #414141;
+                    }
+                }
+                .card{
+                    width: 260px;
+                    height: 104px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-direction: column;
+                    label{
+                        @include RubikS;
+                        color: #606060;
+                    }
+                    input{
+                        width: 260px;
+                        height: 40px;
+                        border: 1px solid #606060;
+                        border-radius: 4px;
+                        box-sizing: border-box;
+                        padding-left: 16px;
+                        @include RubikS;
+                        color: #414141;
+                    }
+                    >div:nth-of-type(2){
+                        width: 260px;
+                        height: 24px;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        p{
+                            @include RubikS;
+                            color: #606060;
+                        }
+                        >div{
+                            width: 20px;
+                            height: 20px;
+                            border: 1px solid #606060;
+                            border-radius: 4px;
+                            margin-right: 8px;
+                            box-sizing: border-box;
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            &.active{
+                                background-color: #70C05B;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .buttons{
+            width: 260px;
+            height: 140px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            button:nth-of-type(1){
+                width: 260px;
+                height: 68px;
+                @include RubikL;
+                color: #FF6633;
+                background-color: #FCD5BA;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #FF6633;
+                    color: white;
+                }
+            }
+            button:nth-of-type(2){
+                width: 121px;
+                height: 32px;
+                cursor: pointer;
+                border: 1px solid #70C05B;
+                border-radius: 4px;
+                background-color: white;
+                color: #70C05B;
+                box-sizing: border-box;
+                &:hover{
+                    background-color: #70C05B;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.new_password_popup{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+    transition: 0.3s all ease;
+    background-color: rgb(252, 213, 186, 0.8);
+    .window{
+        width: 420px;
+        height: 550px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        border-radius: 4px;
+        .close_window{
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            button{
+                width: 40px;
+                height: 40px;
+                border: none;
+                background: none;
+                cursor: pointer;
+            }
+        }
+        .phone_enter{
+            width: 420px;
+            height: 478px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 40px;
+            box-sizing: border-box;
+            .title{
+                @include RubikHeaderS;
+                color: #414141;
+            }
+            .inputs{
+                width: 260px;
+                height: 306px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                .password, .repeat_password{
+                    width: 260px;
+                    height: 87px;
+                    display: flex;
+                    flex-direction: column;
+                    label{
+                        @include RubikM;
+                        color: #8F8F8F;
+                    }
+                    input{
+                        width: 260px;
+                        height: 60px;
+                        padding: 12px;
+                        padding-left: 16px;
+                        border-radius: 4px;
+                        border: 1px solid #BFBFBF;
+                        @include RubikL;
+                        box-sizing: border-box;
+                        box-sizing: border-box;
+                    }
+                    img{
+                        transform: translate(225px, 44px);
+                        cursor: pointer;
                     }
                     &.active{
                         background-color: #70C05B;
